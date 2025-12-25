@@ -1,0 +1,46 @@
+
+// Header 導覽列的樣式調整
+.nav .nav-link {
+  border-radius: 8px;
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.nav .nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* 右邊 icon 的 hover 範圍 */
+.nav .nav-item.ms-auto .nav-link {
+  padding: 8px;
+  border-radius: 999px;
+}
+.bg-img{
+  background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    padding-left: 200px;
+  background-image: url(/assets/images/hero.png);
+  image-rendering: -webkit-optimize-contrast; /* 增加對比度與清晰度 */
+  image-rendering: crisp-edges;
+}
+.bg-img h1{
+  bottom: 480px;  /* 距離底部 480px */
+  left: 220px;    /* 距離左邊 20px */
+  margin: 0;     /* 消除 h1 預設的邊距 */
+  font-size: 62px;
+}
+.bg-img p{
+  bottom: 440px;  /* 距離底部 440px */
+  left: 220px;    /* 距離左邊 20px */
+  margin: 0;     /* 消除 h1 預設的邊距 */
+  font-size: 30px;
+}
+.bg-img button{
+  bottom: 340px;  /* 距離底部 440px */
+  left: 220px;    /* 距離左邊 20px */
+  margin: 0;     /* 消除 h1 預設的邊距 */
+  font-size: 16px;
+  
+}
