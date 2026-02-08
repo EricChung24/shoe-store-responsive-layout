@@ -11,146 +11,196 @@
     <title>StoryShop鞋電商</title>
   </head>
   <body>
-    <%- include('./layout/header'); -%>
+      <%- include('./layout/header'); -%>
+
     <div class="bg-img position-relative mb-5">
       <h1 class="d-flex position-absolute text-white flex-column fw-bolder">
         StoryShop
       </h1>
-      <p class="text-white position-absolute">"Every Step, A New Story."</p>
+      <p class="position-absolute hero-slogan ">"Every Step, A New Story."</p>
       <button class="btn btn-primary-300 position-absolute fw-bolder">
         Take the Step
       </button>
     </div>
+
     <div class="container justify-content-center d-flex flex-column">
+      <!-- =========================
+           New Arrival（新品上市）
+           手機：1 欄
+           md↑：2 欄
+           ========================= -->
       <div class="text-center mb-7">
         <h2 class="fs-1 mb-6">New Arrival</h2>
         <p class="fs-3 fw-bold">新品上市</p>
       </div>
-      <div class="w-100 mb-10 ">
+
+      <div class="w-100 mb-10">
         <div class="row g-3">
-          <div class="col-6">
-            <img
-              class="img-fluid w-100"
-              src="/assets/images/product.png"
-              alt=""
-            />
+          <!-- ✅ col-12 col-md-6：手機 1 欄，平板以上 2 欄 -->
+          <div class="col-12 col-md-6">
+            <img class="img-fluid w-100" src="/assets/images/product.png" alt="" />
             <div>
               <p class="fs-1 text-center">Nightwave</p>
-              <div class="d-flex justify-content-center"><div><del class="text-muted fw-300">NT$4,800元 </del><p class=" fs-5 text-danger">NT$3,500元</p></div></div>
-            </div>
-          </div>
-          <div class="col-6">
-            <img
-              class="img-fluid w-100"
-              src="/assets/images/product-1.png"
-              alt=""
-            />
-            <div>
-              <p class="fs-1 text-center">Crimson Grove</p>
-              <div class="d-flex justify-content-center"><div><del class="text-muted fw-300">NT$4,500元 </del><p class=" fs-5 text-danger">NT$3,500元</p></div></div>
+              <div class="d-flex justify-content-center">
+                <div>
+                  <del class="text-muted fw-300">NT$4,800元 </del>
+                  <p class="fs-5 text-danger">NT$3,500元</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="col-6">
-            <img
-              class="img-fluid w-100"
-              src="/assets/images/product-2.png"
-              alt=""
-            /><div>
-              <p class="fs-1 text-center">Mistglow</p>
-              <div class="d-flex justify-content-center"><div><del class="text-muted fw-300">NT$4,600元 </del><p class=" fs-5 text-danger">NT$3,200元</p></div></div>
+          <div class="col-12 col-md-6">
+            <img class="img-fluid w-100" src="/assets/images/product-1.png" alt="" />
+            <div>
+              <p class="fs-1 text-center">Crimson Grove</p>
+              <div class="d-flex justify-content-center">
+                <div>
+                  <del class="text-muted fw-300">NT$4,500元 </del>
+                  <p class="fs-5 text-danger">NT$3,500元</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-6">
-            <img
-              class="img-fluid w-100"
-              src="/assets/images/product-3.png"
-              alt=""
-            />
+
+          <div class="col-12 col-md-6">
+            <img class="img-fluid w-100" src="/assets/images/product-2.png" alt="" />
+            <div>
+              <p class="fs-1 text-center">Mistglow</p>
+              <div class="d-flex justify-content-center">
+                <div>
+                  <del class="text-muted fw-300">NT$4,600元 </del>
+                  <p class="fs-5 text-danger">NT$3,200元</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <img class="img-fluid w-100" src="/assets/images/product-3.png" alt="" />
             <div>
               <p class="fs-1 text-center">Frost Lily</p>
-              <div class="d-flex justify-content-center"><div ><del class="text-muted fw-300 ">NT$4,700元 </del><p class=" fs-5 text-danger">NT$3,600元</p></div></div>
-              
+              <div class="d-flex justify-content-center">
+                <div>
+                  <del class="text-muted fw-300">NT$4,700元 </del>
+                  <p class="fs-5 text-danger">NT$3,600元</p>
+                </div>
+              </div>
             </div>
-            
           </div>
         </div>
       </div>
-      
+
+      <!-- =========================
+           熱銷補貨
+           手機：2 欄
+           md↑：4 欄
+           ========================= -->
       <h2 class="mb-3">熱銷補貨</h2>
-      <div class="row g-3 mb-10 ">
-        <div class="col-3 position-relative">
-  <p class="position-absolute top-0 start-0 m-2 px-2 py-1 text-white bg-danger fw-bold" >
-    熱銷NO.1
-  </p>
 
-  <img
-    class="img-fluid w-100"
-    src="/assets/images/product-4.png"
-    alt="Twilight Mist"
-  />
-  
-  <div>
-    <p class="fs-5 mt-2 fw-bolder bg-primary-100 text-center">Twilight Mist</p>
-  </div>
-</div><div class="col-3 position-relative">
-  <p class="position-absolute top-0 start-0 m-2 px-2 py-1 text-white bg-primary-500 fw-bold" >
-    限量商品
-  </p>
+      <div class="row g-3 mb-10">
+        <!-- ✅ col-6 col-md-3：手機 2 欄，平板以上 4 欄 -->
+        <div class="col-6 col-md-3 position-relative">
+          <p class="position-absolute top-0 start-0 m-2 px-2 py-1 text-white bg-danger fw-bold">
+            熱銷NO.1
+          </p>
 
-  <img
-    class="img-fluid w-100"
-    src="/assets/images/product-7.png"
-    alt="Twilight Mist"
-  />
-  
-  <div>
-    <p class="fs-5 mt-2 fw-bolder bg-primary-100 text-center">Mistglow</p>
-  </div>
-</div><div class="col-3 position-relative">
-  <p class="position-absolute top-0 start-0 m-2 px-2 py-1 text-primary-500 bg-primary-100 fw-bold" >
-   獨家販售
-  </p>
+          <img class="img-fluid w-100" src="/assets/images/product-4.png" alt="Twilight Mist" />
+          <div>
+            <p class="fs-5 mt-2 fw-bolder bg-primary-100 text-center">Twilight Mist</p>
+          </div>
+        </div>
 
-  <img
-    class="img-fluid w-100"
-    src="/assets/images/product-5.png"
-    alt="Twilight Mist"
-  />
-  
-  <div>
-    <p class="fs-5 mt-2 fw-bolder bg-primary-100 text-center">Crimson Grove</p>
-  </div>
-</div><div class="col-3 position-relative">
-  <p class="position-absolute top-0 start-0 m-2 px-2 py-1 text-white bg-danger-200 fw-bold" >
-    即將推出!
-  </p>
+        <div class="col-6 col-md-3 position-relative">
+          <p class="position-absolute top-0 start-0 m-2 px-2 py-1 text-white bg-primary-500 fw-bold">
+            限量商品
+          </p>
 
-  <img
-    class="img-fluid w-100"
-    src="/assets/images/product-6.png"
-    alt="Twilight Mist"
-  />
-  
-  <div>
-    <p class="fs-5 mt-2 fw-bolder bg-primary-100 text-center">???</p>
-  </div>
-</div>
-        
+          <img class="img-fluid w-100" src="/assets/images/product-7.png" alt="Mistglow" />
+          <div>
+            <p class="fs-5 mt-2 fw-bolder bg-primary-100 text-center">Mistglow</p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 position-relative">
+          <p class="position-absolute top-0 start-0 m-2 px-2 py-1 text-primary-500 bg-primary-100 fw-bold">
+            獨家販售
+          </p>
+
+          <img class="img-fluid w-100" src="/assets/images/product-5.png" alt="Crimson Grove" />
+          <div>
+            <p class="fs-5 mt-2 fw-bolder bg-primary-100 text-center">Crimson Grove</p>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3 position-relative">
+          <p class="position-absolute top-0 start-0 m-2 px-2 py-1 text-white bg-danger-200 fw-bold">
+            即將推出!
+          </p>
+
+          <img class="img-fluid w-100" src="/assets/images/product-6.png" alt="Coming Soon" />
+          <div>
+            <p class="fs-5 mt-2 fw-bolder bg-primary-100 text-center">???</p>
+          </div>
+        </div>
       </div>
+
+      <!-- =========================
+           依系列選購（拼圖）
+           手機：自然往下排
+           lg↑：左右拼圖
+           ========================= -->
       <h2>依系列選購</h2>
 
+      <div class="row g-3 mt-1 mb-10 series-puzzle">
+        <!-- 左：大圖 -->
+        <div class="col-12 col-lg-6">
+          <a href="#" class="puzzle-card puzzle-card--lg">
+            <img src="/assets/images/product-1.png" alt="Nightwave系列" />
+            <div class="puzzle-overlay">
+              <p class="puzzle-title mb-1">Nightwave 系列</p>
+              <span class="puzzle-sub">探索夜行靈感</span>
+            </div>
+          </a>
+        </div>
 
+        <!-- 右：兩張小圖 + 一張橫圖 -->
+        <div class="col-12 col-lg-6">
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <a href="#" class="puzzle-card puzzle-card--sm">
+                <img src="/assets/images/product-2.png" alt="Crimson Grove系列" />
+                <div class="puzzle-overlay">
+                  <p class="puzzle-title mb-1">Crimson Grove</p>
+                  <span class="puzzle-sub">穩定支撐・耐走</span>
+                </div>
+              </a>
+            </div>
 
+            <div class="col-12 col-sm-6">
+              <a href="#" class="puzzle-card puzzle-card--sm">
+                <img src="/assets/images/product-3.png" alt="Mistglow系列" />
+                <div class="puzzle-overlay">
+                  <p class="puzzle-title mb-1">Mistglow</p>
+                  <span class="puzzle-sub">輕量日常・百搭</span>
+                </div>
+              </a>
+            </div>
 
-
-
-
-
-
-
-
-    </div> <!--container結尾-->
+            <div class="col-12">
+              <a href="#" class="puzzle-card puzzle-card--wide">
+                <img src="/assets/images/product-4.png" alt="限定企劃" />
+                <div class="puzzle-overlay">
+                  <p class="puzzle-title mb-1">限定企劃</p>
+                  <span class="puzzle-sub">每一步都是新故事</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- container 結尾 -->
 
     <%- include('./layout/footer'); -%>
     <script type="module" src="../main.js"></script>

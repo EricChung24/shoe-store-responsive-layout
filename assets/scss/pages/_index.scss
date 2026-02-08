@@ -1,8 +1,9 @@
-
-// Header 導覽列的樣式調整
+/* =========================
+   Header 導覽列樣式
+   ========================= */
 .nav .nav-link {
   border-radius: 8px;
-  transition: background-color .15s ease, color .15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .nav .nav-link:hover {
@@ -14,33 +15,193 @@
   padding: 8px;
   border-radius: 999px;
 }
-.bg-img{
+
+/* =========================
+   Hero 大圖（bg-img）RWD
+   目的：文字在手機也不跑版
+   ========================= */
+.bg-img {
   background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    height: 800px;
-    padding-left: 200px;
+  background-position: center;
+  background-size: cover;
   background-image: url(/assets/images/hero.png);
-  image-rendering: -webkit-optimize-contrast; /* 增加對比度與清晰度 */
+  width: 100%;
+
+  /* ✅ 用 min-height 比固定 height 更好做 RWD */
+  min-height: 800px;
+
+  /* ✅ 讓 absolute 定位是以 bg-img 為參考 */
+  position: relative;
+
+  image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
 }
-.bg-img h1{
-  bottom: 480px;  /* 距離底部 480px */
-  left: 220px;    /* 距離左邊 20px */
-  margin: 0;     /* 消除 h1 預設的邊距 */
+
+/* ✅ 桌機：維持你原本左下定位風格（用同一個 left 管理） */
+.bg-img h1,
+.bg-img p,
+.bg-img button {
+  position: absolute;
+  left: 220px;
+  margin: 0;
+}
+
+/* 桌機 h1 */
+.bg-img h1 {
+  bottom: 480px;
   font-size: 62px;
+  line-height: 1.1;
 }
-.bg-img p{
-  bottom: 440px;  /* 距離底部 440px */
-  left: 220px;    /* 距離左邊 20px */
-  margin: 0;     /* 消除 h1 預設的邊距 */
+
+/* 桌機 slogan */
+.bg-img p {
+  bottom: 440px;
   font-size: 30px;
+  max-width: 520px; /* ✅ 避免字太長溢出 */
 }
-.bg-img button{
-  bottom: 340px;  /* 距離底部 440px */
-  left: 220px;    /* 距離左邊 20px */
-  margin: 0;     /* 消除 h1 預設的邊距 */
+
+/* 桌機按鈕 */
+.bg-img button {
+  bottom: 340px;
   font-size: 16px;
-  
+}
+
+/* ===== 平板（<=992px）：縮字 + 調位置 + 降低 hero 高度 ===== */
+@media (max-width: 992px) {
+  .bg-img {
+    min-height: 620px;
+  }
+
+  .bg-img h1,
+  .bg-img p,
+  .bg-img button {
+    left: 64px;
+  }
+
+  .bg-img h1 {
+    bottom: 360px;
+    font-size: 44px;
+  }
+
+  .bg-img p {
+    bottom: 320px;
+    font-size: 20px;
+    max-width: 360px;
+  }
+
+  .bg-img button {
+    bottom: 250px;
+    font-size: 14px;
+  }
+}
+
+/* ===== 手機（<=576px）：全部置中（最穩） ===== */
+@media (max-width: 576px) {
+  .bg-img {
+    min-height: 420px;
+  }
+
+  .bg-img h1,
+  .bg-img p,
+  .bg-img button {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .bg-img h1 {
+    bottom: 250px;
+    font-size: 32px;
+  }
+
+  .bg-img p {
+    bottom: 210px;
+    font-size: 16px;
+    max-width: 280px;
+    padding: 0 12px;
+  }
+
+  .bg-img button {
+    bottom: 150px;
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   Series Puzzle（拼圖網格）
+   只保留一份（你原本重複兩份）
+   ========================= */
+.puzzle-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.puzzle-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.35s ease;
+  display: block;
+}
+
+.puzzle-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 45%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+}
+
+.puzzle-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.puzzle-sub {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+.puzzle-card:hover img {
+  transform: scale(1.06);
+}
+
+/* 高度：桌機預設 */
+.puzzle-card--lg { height: 456px; }
+.puzzle-card--sm { height: 220px; }
+.puzzle-card--wide { height: 220px; }
+
+/* 平板（<992px）：大圖稍微縮 */
+@media (max-width: 992px) {
+  .puzzle-card--lg { height: 380px; }
+  .hero-slogan {
+    color: white; /* Bootstrap  */
+  }
+}
+
+/* 手機（<576px）：大圖再縮、文字縮小 */
+@media (max-width: 576px) {
+  .puzzle-card--lg { height: 300px; }
+  .puzzle-title { font-size: 18px; }
+  .hero-slogan {
+    color: white; /* Bootstrap  */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-slogan { color: #dc3545; /* Bootstrap danger 紅 */ 
+  ;font-weight: 700;}
 }
